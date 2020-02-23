@@ -6,9 +6,9 @@ import com.bannyrest.bannyrest.domain.Client;
 
 public interface ClientService {
  
-	Client getClient(final Integer id);
+	Client findClientById(final Integer id);
 	
-	List<Client> getClients();
+	List<Client> findAllClients();
 	
 	void createClient(final Client client);
 	

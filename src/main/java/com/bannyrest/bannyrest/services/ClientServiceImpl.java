@@ -19,12 +19,12 @@ public class ClientServiceImpl implements ClientService {
 	}
 	
 	@Override
-	public Client getClient(Integer id) {
+	public Client findClientById(Integer id) {
 		return clientMapper.selectOne(id);
 	}
 
 	@Override
-	public List<Client> getClients() {
+	public List<Client> findAllClients() {
 		return clientMapper.findAll();
 	}
 

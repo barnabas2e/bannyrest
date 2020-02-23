@@ -2,10 +2,14 @@ package com.bannyrest.bannyrest.domain;
 
 import java.io.Serializable;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Client implements Serializable {
     
 	private static final long serialVersionUID = -6673532093586278058L;
     private Integer id;
+   
+    @ApiModelProperty(value = "Client First Name property")
     private String firstName;
     private String lastName;
     
