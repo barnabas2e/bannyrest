@@ -30,17 +30,15 @@ public class ClientController {
 		this.clientService = clientService;
 	}
 	
-	@GetMapping("/clients/{id}")
-	@ResponseStatus(HttpStatus.OK)
-	public Client findClientById(@PathVariable final Integer id) {
-		try {
-			return clientService.findClientById(id);			
-			//return clientService.getClient(pId)
-				  //    .orElseThrow(() -> new ClientNotFoundException(pId));
-		} catch (Exception ex) {
-			throw new ClientNotFoundException(id);
-		}					
-	}
+	/*
+	 * @GetMapping("/clients/{id}")
+	 * 
+	 * @ResponseStatus(HttpStatus.OK) public Client findClientById(@PathVariable
+	 * final Integer id) { try { return clientService.findClientById(id); //return
+	 * clientService.getClient(pId) // .orElseThrow(() -> new
+	 * ClientNotFoundException(pId)); } catch (Exception ex) { throw new
+	 * ClientNotFoundException(id); } }
+	 */
 	
 	@ApiOperation(value = "findAllClients: This is expected to return a list of clients", 
 				  notes = "Some notes about this operation")
@@ -55,5 +53,10 @@ public class ClientController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public void newClient(@RequestBody final Client client) {
 		clientService.createClient(client);
+	}
+	
+	@GetMapping("/clients/{firstName}")
+	public List<Client> findClientByFirstName(@PathVariable final String firstName) {
+		return clientService.findClientByFirstName(firstName);
 	}
 }

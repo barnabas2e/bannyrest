@@ -22,4 +22,6 @@ public interface ClientMapper {
 	@SelectKey(keyProperty = "id", keyColumn = "id", before = true,
 	 statement = "SELECT client_seq.nextVal as id from dual", resultType = Integer.class)
 	void insertClient(Client pClient);
+	
+	List<Client> findByFirstName(String firstName);
 }

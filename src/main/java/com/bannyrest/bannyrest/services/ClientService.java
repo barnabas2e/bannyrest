@@ -12,4 +12,5 @@ public interface ClientService {
 	
 	void createClient(final Client client);
 	
+	List<Client> findClientByFirstName(String firstName);
 }

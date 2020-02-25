@@ -33,4 +33,9 @@ public class ClientServiceImpl implements ClientService {
 		clientMapper.insertClient(pClient);
 	}
 
+	@Override
+	public List<Client> findClientByFirstName(String firstName) {
+		return clientMapper.findByFirstName(firstName);
+	}
+
 }
